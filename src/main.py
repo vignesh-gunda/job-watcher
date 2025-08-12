@@ -2,7 +2,16 @@ from __future__ import annotations
 import os, re, sys, yaml, requests
 from typing import List, Dict
 from datetime import datetime, timezone
-from zoneinfo import ZoneInfo
+
+# Handle zoneinfo import for Python < 3.9 compatibility
+try:
+    from zoneinfo import ZoneInfo
+except ImportError:
+    try:
+        from backports.zoneinfo import ZoneInfo
+    except ImportError:
+        # Fallback if zoneinfo is not available
+        ZoneInfo = None
 
 from config import EMAIL_TO, EMAIL_FROM, SMTP_HOST, SMTP_PORT, SMTP_USERNAME, SMTP_PASSWORD, REPO_STATE_PATH
 from storage import SeenStore
@@ -24,17 +33,34 @@ def matches_filters(job: Dict, global_cfg: dict, company_cfg: dict) -> bool:
     title = normalize_text(job.get("title", "")).lower()
     loc = normalize_text(job.get("location", "")).lower()
 
-    # keywords
-    include_any = [k.lower() for k in (company_cfg.get("include_keywords") or global_cfg.get("keywords_any") or [])]
-    exclude_any = [k.lower() for k in (company_cfg.get("exclude_keywords") or global_cfg.get("exclude_keywords") or [])]
+    # keywords - company-specific overrides global, otherwise use global
+    include_any = []
+    if company_cfg.get("include_keywords"):
+        include_any = [k.lower() for k in company_cfg.get("include_keywords")]
+    else:
+        include_any = [k.lower() for k in global_cfg.get("keywords_any", [])]
+    
+    exclude_any = []
+    if company_cfg.get("exclude_keywords"):
+        exclude_any = [k.lower() for k in company_cfg.get("exclude_keywords")]
+    else:
+        exclude_any = [k.lower() for k in global_cfg.get("exclude_keywords", [])]
 
-    if include_any and not any(k in title for k in include_any):
+    # Check include keywords
+    if include_any and not any(k.lower() in title for k in include_any):
         return False
-    if any(k in title for k in exclude_any):
+    
+    # Check exclude keywords
+    if any(k.lower() in title for k in exclude_any):
         return False
 
-    # locations (optional, string contains)
-    loc_filters = [l.lower() for l in (company_cfg.get("locations_any") or global_cfg.get("locations_any") or [])]
+    # locations - company-specific overrides global, otherwise use global
+    loc_filters = []
+    if company_cfg.get("locations_any"):
+        loc_filters = [l.lower() for l in company_cfg.get("locations_any")]
+    else:
+        loc_filters = [l.lower() for l in global_cfg.get("locations_any", [])]
+    
     if loc_filters:
         if not any(lf in loc for lf in loc_filters):
             # allow empty location to pass (many APIs don't include it)

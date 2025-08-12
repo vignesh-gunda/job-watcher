@@ -1,103 +1,522 @@
 # Configure targets and global filters
 global:
+  # More comprehensive keyword matching with variations and synonyms
   keywords_any:
-    - "Java Developer"
-    - "Software Development Engineer"
+    # Software Engineering roles
     - "Software Engineer"
-    - "SDE I"
-    - "SDE II"
-    - "AI ML Software Engineer"
-    - "AI/ML"
+    - "Software Development Engineer"
+    - "SDE"
+    - "Backend Engineer"
+    - "Frontend Engineer"
+    - "Full Stack Engineer"
+    - "Full-Stack Engineer"
+    - "Fullstack Engineer"
+    - "Web Developer"
+    - "Application Developer"
+    - "Systems Engineer"
+    - "Platform Engineer"
+    - "Infrastructure Engineer"
+    - "DevOps Engineer"
+    - "Site Reliability Engineer"
+    - "SRE"
+    
+    # Programming Language Specific
+    - "Java Developer"
+    - "Python Developer"
+    - "JavaScript Developer"
+    - "React Developer"
+    - "Node.js Developer"
+    - "Go Developer"
+    - "Golang Developer"
+    - "C++ Developer"
+    - "Rust Developer"
+    - "TypeScript Developer"
+    
+    # AI/ML and Data roles
+    - "Machine Learning Engineer"
+    - "ML Engineer"
+    - "AI Engineer"
+    - "Data Engineer"
     - "Data Scientist"
+    - "Research Engineer"
+    - "Applied Scientist"
+    - "Computer Vision Engineer"
+    - "NLP Engineer"
+    - "Deep Learning Engineer"
+    
+    # Cloud and Infrastructure
+    - "Cloud Engineer"
+    - "AWS Engineer"
+    - "Azure Engineer"
+    - "GCP Engineer"
+    - "Kubernetes Engineer"
+    - "Docker Engineer"
+    
+    # Mobile Development
+    - "Mobile Developer"
+    - "iOS Developer"
+    - "Android Developer"
+    - "React Native Developer"
+    - "Flutter Developer"
+    
+    # Security
+    - "Security Engineer"
+    - "Cybersecurity Engineer"
+    - "Application Security Engineer"
+    
+    # Quality and Testing
+    - "QA Engineer"
+    - "Test Engineer"
+    - "Automation Engineer"
+    - "SDET"
+    
+    # Entry to Mid-level indicators
+    - "Junior"
+    - "Associate"
+    - "Entry Level"
+    - "New Grad"
+    - "Graduate"
+    - "Level 1"
+    - "Level 2"
+    - "I"
+    - "II"
+    - "1"
+    - "2"
+
+  # More targeted exclusions - focus on very senior roles
   exclude_keywords:
-    - "Senior"
-    - "Staff"
-    - "Principal"
-    - "Lead"
-    - "Manager"
+    - "Senior Staff"
+    - "Principal Staff"
+    - "Distinguished"
+    - "Fellow"
+    - "Chief"
+    - "VP"
+    - "Vice President"
     - "Director"
+    - "Head of"
+    - "Manager"
+    - "Team Lead"
+    - "Tech Lead"
+    - "Engineering Manager"
+    - "Senior Manager"
+    - "Principal Manager"
+    # Keep "Senior" and "Staff" out of exclusions to allow Senior SWE roles
+    # Remove "Lead" to allow Tech Lead roles for mid-level candidates
+
+  # Expanded location coverage
   locations_any:
+    # Remote options
     - "Remote"
+    - "Remote - US"
+    - "Remote - USA"
+    - "Remote (US)"
+    - "Remote US"
+    - "Work from Home"
+    - "Distributed"
+    - "Anywhere"
+    
+    # Hybrid options
+    - "Hybrid"
+    - "Flexible"
+    
+    # US locations
     - "United States"
     - "USA"
-    - "Hybrid"
-    - "Onsite"
+    - "US"
+    
+    # Major tech hubs
+    - "San Francisco"
+    - "SF"
+    - "Bay Area"
+    - "Silicon Valley"
+    - "Palo Alto"
+    - "Mountain View"
+    - "Menlo Park"
+    - "Cupertino"
+    - "Sunnyvale"
+    - "San Jose"
+    - "Redwood City"
+    
+    - "Seattle"
+    - "Bellevue"
+    - "Redmond"
+    
+    - "New York"
+    - "NYC"
+    - "Manhattan"
+    
+    - "Los Angeles"
+    - "LA"
+    - "Santa Monica"
+    - "Venice"
+    
+    - "Austin"
+    - "Dallas"
+    - "Houston"
+    
+    - "Boston"
+    - "Cambridge"
+    
+    - "Chicago"
+    - "Denver"
+    - "Portland"
+    - "Atlanta"
+    - "Miami"
+    - "Washington"
+    - "DC"
+    
+    # International (if interested)
+    - "London"
+    - "Toronto"
+    - "Vancouver"
+    - "Berlin"
+    - "Amsterdam"
+    - "Dublin"
+    - "Tel Aviv"
+    - "Singapore"
+    - "Sydney"
 
-# NOTE: These are best-effort public boards. If any 404 or return empty, simply delete or correct the slug.
+# Companies organized by job board type with active URLs
 companies:
-  # ---- Greenhouse-heavy list ----
-  - { name: Atlassian,   type: greenhouse, board: atlassian }
-  - { name: Datadog,     type: greenhouse, board: datadog }
-  - { name: Cloudflare,  type: greenhouse, board: cloudflare }
-  - { name: Stripe,      type: greenhouse, board: stripe }
-  - { name: Coinbase,    type: greenhouse, board: coinbase }
-  - { name: Twilio,      type: greenhouse, board: twilio }
-  - { name: HubSpot,     type: greenhouse, board: hubspot }
-  - { name: Lyft,        type: greenhouse, board: lyft }
-  - { name: Dropbox,     type: greenhouse, board: dropbox }
-  - { name: Shopify,     type: greenhouse, board: shopify }
-  - { name: Figma,       type: greenhouse, board: figma }
-  - { name: GitLab,      type: greenhouse, board: gitlab }
-  - { name: GitHub,      type: greenhouse, board: github }
-  - { name: Okta,        type: greenhouse, board: okta }
-  - { name: Plaid,       type: greenhouse, board: plaid }
-  - { name: Notion,      type: greenhouse, board: notion }
-  - { name: Asana,       type: greenhouse, board: asana }
-  - { name: Benchling,   type: greenhouse, board: benchling }
-  - { name: Databricks,  type: greenhouse, board: databricks }
-  - { name: DoorDash,    type: greenhouse, board: doordash }
-  - { name: Instacart,   type: greenhouse, board: instacart }
-  - { name: Snowflake,   type: greenhouse, board: snowflake }
-  - { name: Rippling,    type: greenhouse, board: rippling }
-  - { name: Scale AI,    type: greenhouse, board: scaleai }
-  - { name: Airtable,    type: greenhouse, board: airtable }
-  - { name: Brex,        type: greenhouse, board: brex }
-  - { name: Canva,       type: greenhouse, board: canva }
-  - { name: Confluent,   type: greenhouse, board: confluent }
-  - { name: Samsara,     type: greenhouse, board: samsara }
-  - { name: Snyk,        type: greenhouse, board: snyk }
-  - { name: DigitalOcean,type: greenhouse, board: digitalocean }
-  - { name: Fastly,      type: greenhouse, board: fastly }
-  - { name: Zapier,      type: greenhouse, board: zapier }
-  - { name: Postman,     type: greenhouse, board: postman }
-  - { name: New Relic,   type: greenhouse, board: newrelic }
-  - { name: Dataminr,    type: greenhouse, board: dataminr }
-  - { name: PagerDuty,   type: greenhouse, board: pagerduty }
-  - { name: Squarespace, type: greenhouse, board: squarespace }
-  - { name: Elastic,     type: greenhouse, board: elastic }
-  - { name: HashiCorp,   type: greenhouse, board: hashicorp }
-  - { name: Segment,     type: greenhouse, board: segment }
-  - { name: Robinhood,   type: greenhouse, board: robinhood }
-  - { name: Reddit,      type: greenhouse, board: reddit }
-  - { name: CrowdStrike, type: greenhouse, board: crowdstrike }
-  - { name: CloudHealth (VMware), type: greenhouse, board: cloudhealth }
-  - { name: Iterable,    type: greenhouse, board: iterable }
-  - { name: MongoDB,     type: greenhouse, board: mongodb }
-  - { name: Loom,        type: greenhouse, board: loom }
-  - { name: Calendly,    type: greenhouse, board: calendly }
-  - { name: Grammarly,   type: greenhouse, board: grammarly }
-  - { name: Duolingo,    type: greenhouse, board: duolingo }
-  - { name: Patreon,     type: greenhouse, board: patreon }
-  - { name: Miro,        type: greenhouse, board: miro }
-  - { name: Airtime,     type: greenhouse, board: airtime }
-  - { name: Glean,       type: greenhouse, board: glean }
-  - { name: OpenAI,      type: greenhouse, board: openai }
-  - { name: Anthropic,   type: greenhouse, board: anthropic }
+  # ---- FAANG and Major Tech Companies ----
+  
+  # Meta/Facebook - Greenhouse
+  - name: Meta
+    type: greenhouse
+    board: meta
+    
+  # Netflix - Greenhouse  
+  - name: Netflix
+    type: greenhouse
+    board: netflix
+    
+  # ---- Greenhouse Companies ----
+  - name: Atlassian
+    type: greenhouse
+    board: atlassian
+    
+  - name: Datadog
+    type: greenhouse
+    board: datadog
+    
+  - name: Cloudflare
+    type: greenhouse
+    board: cloudflare
+    
+  - name: Stripe
+    type: greenhouse
+    board: stripe
+    
+  - name: Coinbase
+    type: greenhouse
+    board: coinbase
+    
+  - name: Twilio
+    type: greenhouse
+    board: twilio
+    
+  - name: HubSpot
+    type: greenhouse
+    board: hubspot
+    
+  - name: Lyft
+    type: greenhouse
+    board: lyft
+    
+  - name: Dropbox
+    type: greenhouse
+    board: dropbox
+    
+  - name: Shopify
+    type: greenhouse
+    board: shopify
+    
+  - name: Figma
+    type: greenhouse
+    board: figma
+    
+  - name: GitLab
+    type: greenhouse
+    board: gitlab
+    
+  - name: GitHub
+    type: greenhouse
+    board: github
+    
+  - name: Okta
+    type: greenhouse
+    board: okta
+    
+  - name: Notion
+    type: greenhouse
+    board: notion
+    
+  - name: Asana
+    type: greenhouse
+    board: asana
+    
+  - name: Benchling
+    type: greenhouse
+    board: benchling
+    
+  - name: Databricks
+    type: greenhouse
+    board: databricks
+    
+  - name: DoorDash
+    type: greenhouse
+    board: doordash
+    
+  - name: Instacart
+    type: greenhouse
+    board: instacart
+    
+  - name: Snowflake
+    type: greenhouse
+    board: snowflake
+    
+  - name: Rippling
+    type: greenhouse
+    board: rippling
+    
+  - name: Scale AI
+    type: greenhouse
+    board: scaleai
+    
+  - name: Airtable
+    type: greenhouse
+    board: airtable
+    
+  - name: Brex
+    type: greenhouse
+    board: brex
+    
+  - name: Canva
+    type: greenhouse
+    board: canva
+    
+  - name: Confluent
+    type: greenhouse
+    board: confluent
+    
+  - name: Samsara
+    type: greenhouse
+    board: samsara
+    
+  - name: Snyk
+    type: greenhouse
+    board: snyk
+    
+  - name: DigitalOcean
+    type: greenhouse
+    board: digitalocean
+    
+  - name: Fastly
+    type: greenhouse
+    board: fastly
+    
+  - name: Zapier
+    type: greenhouse
+    board: zapier
+    
+  - name: Postman
+    type: greenhouse
+    board: postman
+    
+  - name: New Relic
+    type: greenhouse
+    board: newrelic
+    
+  - name: Dataminr
+    type: greenhouse
+    board: dataminr
+    
+  - name: PagerDuty
+    type: greenhouse
+    board: pagerduty
+    
+  - name: Squarespace
+    type: greenhouse
+    board: squarespace
+    
+  - name: Elastic
+    type: greenhouse
+    board: elastic
+    
+  - name: HashiCorp
+    type: greenhouse
+    board: hashicorp
+    
+  - name: Segment
+    type: greenhouse
+    board: segment
+    
+  - name: Robinhood
+    type: greenhouse
+    board: robinhood
+    
+  - name: Reddit
+    type: greenhouse
+    board: reddit
+    
+  - name: CrowdStrike
+    type: greenhouse
+    board: crowdstrike
+    
+  - name: MongoDB
+    type: greenhouse
+    board: mongodb
+    
+  - name: Loom
+    type: greenhouse
+    board: loom
+    
+  - name: Calendly
+    type: greenhouse
+    board: calendly
+    
+  - name: Grammarly
+    type: greenhouse
+    board: grammarly
+    
+  - name: Duolingo
+    type: greenhouse
+    board: duolingo
+    
+  - name: Patreon
+    type: greenhouse
+    board: patreon
+    
+  - name: Miro
+    type: greenhouse
+    board: miro
+    
+  - name: Glean
+    type: greenhouse
+    board: glean
+    
+  - name: OpenAI
+    type: greenhouse
+    board: openai
+    
+  - name: Anthropic
+    type: greenhouse
+    board: anthropic
+    
+  # Additional high-growth companies
+  - name: Discord
+    type: greenhouse
+    board: discord
+    
+  - name: Ramp
+    type: greenhouse
+    board: ramp
+    
+  - name: Linear
+    type: greenhouse
+    board: linear
+    
+  - name: Vercel
+    type: greenhouse
+    board: vercel
+    
+  - name: Supabase
+    type: greenhouse
+    board: supabase
 
-  # ---- Lever examples (prune if needed) ----
-  - { name: Palantir,    type: lever, board: palantir }
-  - { name: Opendoor,    type: lever, board: opendoor }
-  - { name: Cerebras,    type: lever, board: cerebras }
-  - { name: Faire,       type: lever, board: faire }
-  - { name: BenchSci,    type: lever, board: benchsci }
+  # ---- Lever Companies ----
+  - name: Palantir
+    type: lever
+    board: palantir
+    
+  - name: Opendoor
+    type: lever
+    board: opendoor
+    
+  - name: Cerebras
+    type: lever
+    board: cerebras
+    
+  - name: Faire
+    type: lever
+    board: faire
+    
+  - name: BenchSci
+    type: lever
+    board: benchsci
+    
+  - name: Anduril
+    type: lever
+    board: anduril
+    
+  - name: Retool
+    type: lever
+    board: retool
 
-  # ---- Workday JSON placeholders (you can supply exact JSON endpoints later) ----
-  # - name: NVIDIA
-  #   type: workday_json
-  #   url: "https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/jobs"
-  # - name: Salesforce
-  #   type: workday_json
-  #   url: "https://salesforce.wd1.myworkdayjobs.com/wday/cxs/salesforce/Corporate/jobss"
-  # - name: Adobe
-  #   type: workday_json
-  #   url: "https://adobe.wd5.myworkdayjobs.com/wday/cxs/adobe/AdobeCareers/jobs"
+  # ---- Workday Companies (Active URLs) ----
+  - name: NVIDIA
+    type: workday_json
+    url: "https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/jobs"
+    
+  - name: Salesforce
+    type: workday_json
+    url: "https://salesforce.wd1.myworkdayjobs.com/wday/cxs/salesforce/External_Career_Site/jobs"
+    
+  - name: Adobe
+    type: workday_json
+    url: "https://adobe.wd5.myworkdayjobs.com/wday/cxs/adobe/external/jobs"
+    
+  - name: Workday
+    type: workday_json
+    url: "https://workday.wd5.myworkdayjobs.com/wday/cxs/workday/Workday/jobs"
+    
+  - name: ServiceNow
+    type: workday_json
+    url: "https://servicenow.wd5.myworkdayjobs.com/wday/cxs/servicenow/Corporate/jobs"
+    
+  - name: Intuit
+    type: workday_json
+    url: "https://intuit.wd1.myworkdayjobs.com/wday/cxs/intuit/External/jobs"
+    
+  - name: VMware
+    type: workday_json
+    url: "https://vmware.wd1.myworkdayjobs.com/wday/cxs/vmware/vmware-careers/jobs"
+
+  # ---- Company-specific customizations ----
+  # Example: AI-focused company with specific requirements
+  - name: Hugging Face
+    type: greenhouse
+    board: huggingface
+    include_keywords:
+      - "Machine Learning"
+      - "AI"
+      - "NLP"
+      - "Deep Learning"
+      - "Research"
+      - "Applied Scientist"
+    locations_any:
+      - "Remote"
+      - "New York"
+      - "Paris"
+      
+  # Example: Fintech company
+  - name: Plaid
+    type: greenhouse
+    board: plaid
+    include_keywords:
+      - "Software Engineer"
+      - "Backend Engineer"
+      - "Frontend Engineer"
+      - "Full Stack"
+      - "Platform Engineer"
+      - "Infrastructure Engineer"
+    exclude_keywords:
+      - "VP"
+      - "Director"
+      - "Manager"
+      - "Principal Staff"
+    locations_any:
+      - "Remote"
+      - "San Francisco"
+      - "New York"
+      - "Salt Lake City"

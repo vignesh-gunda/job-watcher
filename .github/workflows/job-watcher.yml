@@ -18,7 +18,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          python-version: '3.9'
 
       - name: Install deps
         run: |
@@ -34,14 +34,28 @@ jobs:
           EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
         run: |
+          echo "Starting job watcher..."
+          python --version
           python src/main.py
+          echo "Job watcher completed with exit code: $?"
 
       - name: Commit state (if changed)
         run: |
           git config user.email "actions@github.com"
           git config user.name "github-actions"
-          git add state/seen.json
-          if [ -n "$(git status --porcelain)" ]; then
+          
+          # Ensure state directory exists
+          mkdir -p state
+          
+          # Add the state file if it exists
+          if [ -f "state/seen.json" ]; then
+            git add state/seen.json
+          fi
+          
+          # Check if there are changes to commit
+          if ! git diff --staged --quiet; then
             git commit -m "chore: update state [skip ci]"
             git push
+          else
+            echo "No changes to commit"
           fi
