@@ -1,0 +1,103 @@
+# Configure targets and global filters
+global:
+  keywords_any:
+    - "Java Developer"
+    - "Software Development Engineer"
+    - "Software Engineer"
+    - "SDE I"
+    - "SDE II"
+    - "AI ML Software Engineer"
+    - "AI/ML"
+    - "Data Scientist"
+  exclude_keywords:
+    - "Senior"
+    - "Staff"
+    - "Principal"
+    - "Lead"
+    - "Manager"
+    - "Director"
+  locations_any:
+    - "Remote"
+    - "United States"
+    - "USA"
+    - "Hybrid"
+    - "Onsite"
+
+# NOTE: These are best-effort public boards. If any 404 or return empty, simply delete or correct the slug.
+companies:
+  # ---- Greenhouse-heavy list ----
+  - { name: Atlassian,   type: greenhouse, board: atlassian }
+  - { name: Datadog,     type: greenhouse, board: datadog }
+  - { name: Cloudflare,  type: greenhouse, board: cloudflare }
+  - { name: Stripe,      type: greenhouse, board: stripe }
+  - { name: Coinbase,    type: greenhouse, board: coinbase }
+  - { name: Twilio,      type: greenhouse, board: twilio }
+  - { name: HubSpot,     type: greenhouse, board: hubspot }
+  - { name: Lyft,        type: greenhouse, board: lyft }
+  - { name: Dropbox,     type: greenhouse, board: dropbox }
+  - { name: Shopify,     type: greenhouse, board: shopify }
+  - { name: Figma,       type: greenhouse, board: figma }
+  - { name: GitLab,      type: greenhouse, board: gitlab }
+  - { name: GitHub,      type: greenhouse, board: github }
+  - { name: Okta,        type: greenhouse, board: okta }
+  - { name: Plaid,       type: greenhouse, board: plaid }
+  - { name: Notion,      type: greenhouse, board: notion }
+  - { name: Asana,       type: greenhouse, board: asana }
+  - { name: Benchling,   type: greenhouse, board: benchling }
+  - { name: Databricks,  type: greenhouse, board: databricks }
+  - { name: DoorDash,    type: greenhouse, board: doordash }
+  - { name: Instacart,   type: greenhouse, board: instacart }
+  - { name: Snowflake,   type: greenhouse, board: snowflake }
+  - { name: Rippling,    type: greenhouse, board: rippling }
+  - { name: Scale AI,    type: greenhouse, board: scaleai }
+  - { name: Airtable,    type: greenhouse, board: airtable }
+  - { name: Brex,        type: greenhouse, board: brex }
+  - { name: Canva,       type: greenhouse, board: canva }
+  - { name: Confluent,   type: greenhouse, board: confluent }
+  - { name: Samsara,     type: greenhouse, board: samsara }
+  - { name: Snyk,        type: greenhouse, board: snyk }
+  - { name: DigitalOcean,type: greenhouse, board: digitalocean }
+  - { name: Fastly,      type: greenhouse, board: fastly }
+  - { name: Zapier,      type: greenhouse, board: zapier }
+  - { name: Postman,     type: greenhouse, board: postman }
+  - { name: New Relic,   type: greenhouse, board: newrelic }
+  - { name: Dataminr,    type: greenhouse, board: dataminr }
+  - { name: PagerDuty,   type: greenhouse, board: pagerduty }
+  - { name: Squarespace, type: greenhouse, board: squarespace }
+  - { name: Elastic,     type: greenhouse, board: elastic }
+  - { name: HashiCorp,   type: greenhouse, board: hashicorp }
+  - { name: Segment,     type: greenhouse, board: segment }
+  - { name: Robinhood,   type: greenhouse, board: robinhood }
+  - { name: Reddit,      type: greenhouse, board: reddit }
+  - { name: CrowdStrike, type: greenhouse, board: crowdstrike }
+  - { name: CloudHealth (VMware), type: greenhouse, board: cloudhealth }
+  - { name: Iterable,    type: greenhouse, board: iterable }
+  - { name: MongoDB,     type: greenhouse, board: mongodb }
+  - { name: Loom,        type: greenhouse, board: loom }
+  - { name: Calendly,    type: greenhouse, board: calendly }
+  - { name: Grammarly,   type: greenhouse, board: grammarly }
+  - { name: Duolingo,    type: greenhouse, board: duolingo }
+  - { name: Patreon,     type: greenhouse, board: patreon }
+  - { name: Miro,        type: greenhouse, board: miro }
+  - { name: Airtime,     type: greenhouse, board: airtime }
+  - { name: Glean,       type: greenhouse, board: glean }
+  - { name: OpenAI,      type: greenhouse, board: openai }
+  - { name: Anthropic,   type: greenhouse, board: anthropic }
+
+  # ---- Lever examples (prune if needed) ----
+  - { name: Palantir,    type: lever, board: palantir }
+  - { name: Opendoor,    type: lever, board: opendoor }
+  - { name: Cerebras,    type: lever, board: cerebras }
+  - { name: Faire,       type: lever, board: faire }
+  - { name: BenchSci,    type: lever, board: benchsci }
+
+  # ---- Workday JSON placeholders (you can supply exact JSON endpoints later) ----
+  # - name: NVIDIA
+  #   type: workday_json
+  #   url: "https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/jobs"
+  # - name: Salesforce
+  #   type: workday_json
+  #   url: "https://salesforce.wd1.myworkdayjobs.com/wday/cxs/salesforce/Corporate/jobss"
+  # - name: Adobe
+  #   type: workday_json
+  #   url: "https://adobe.wd5.myworkdayjobs.com/wday/cxs/adobe/AdobeCareers/jobs"
