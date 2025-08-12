@@ -1,8 +1,6 @@
 # Configure targets and global filters
 global:
-  # More comprehensive keyword matching with variations and synonyms
   keywords_any:
-    # Software Engineering roles
     - "Software Engineer"
     - "Software Development Engineer"
     - "SDE"
@@ -19,8 +17,6 @@ global:
     - "DevOps Engineer"
     - "Site Reliability Engineer"
     - "SRE"
-    
-    # Programming Language Specific
     - "Java Developer"
     - "Python Developer"
     - "JavaScript Developer"
@@ -31,8 +27,6 @@ global:
     - "C++ Developer"
     - "Rust Developer"
     - "TypeScript Developer"
-    
-    # AI/ML and Data roles
     - "Machine Learning Engineer"
     - "ML Engineer"
     - "AI Engineer"
@@ -43,34 +37,24 @@ global:
     - "Computer Vision Engineer"
     - "NLP Engineer"
     - "Deep Learning Engineer"
-    
-    # Cloud and Infrastructure
     - "Cloud Engineer"
     - "AWS Engineer"
     - "Azure Engineer"
     - "GCP Engineer"
     - "Kubernetes Engineer"
     - "Docker Engineer"
-    
-    # Mobile Development
     - "Mobile Developer"
     - "iOS Developer"
     - "Android Developer"
     - "React Native Developer"
     - "Flutter Developer"
-    
-    # Security
     - "Security Engineer"
     - "Cybersecurity Engineer"
     - "Application Security Engineer"
-    
-    # Quality and Testing
     - "QA Engineer"
     - "Test Engineer"
     - "Automation Engineer"
     - "SDET"
-    
-    # Entry to Mid-level indicators
     - "Junior"
     - "Associate"
     - "Entry Level"
@@ -83,7 +67,6 @@ global:
     - "1"
     - "2"
 
-  # More targeted exclusions - focus on very senior roles
   exclude_keywords:
     - "Senior Staff"
     - "Principal Staff"
@@ -100,12 +83,8 @@ global:
     - "Engineering Manager"
     - "Senior Manager"
     - "Principal Manager"
-    # Keep "Senior" and "Staff" out of exclusions to allow Senior SWE roles
-    # Remove "Lead" to allow Tech Lead roles for mid-level candidates
 
-  # Expanded location coverage
   locations_any:
-    # Remote options
     - "Remote"
     - "Remote - US"
     - "Remote - USA"
@@ -114,17 +93,11 @@ global:
     - "Work from Home"
     - "Distributed"
     - "Anywhere"
-    
-    # Hybrid options
     - "Hybrid"
     - "Flexible"
-    
-    # US locations
     - "United States"
     - "USA"
     - "US"
-    
-    # Major tech hubs
     - "San Francisco"
     - "SF"
     - "Bay Area"
@@ -136,27 +109,21 @@ global:
     - "Sunnyvale"
     - "San Jose"
     - "Redwood City"
-    
     - "Seattle"
     - "Bellevue"
     - "Redmond"
-    
     - "New York"
     - "NYC"
     - "Manhattan"
-    
     - "Los Angeles"
     - "LA"
     - "Santa Monica"
     - "Venice"
-    
     - "Austin"
     - "Dallas"
     - "Houston"
-    
     - "Boston"
     - "Cambridge"
-    
     - "Chicago"
     - "Denver"
     - "Portland"
@@ -164,8 +131,6 @@ global:
     - "Miami"
     - "Washington"
     - "DC"
-    
-    # International (if interested)
     - "London"
     - "Toronto"
     - "Vancouver"
@@ -176,347 +141,92 @@ global:
     - "Singapore"
     - "Sydney"
 
-# Companies organized by job board type with active URLs
 companies:
-  # ---- FAANG and Major Tech Companies ----
-  
-  # Meta/Facebook - Greenhouse
-  - name: Meta
-    type: greenhouse
-    board: meta
-    
-  # Netflix - Greenhouse  
-  - name: Netflix
-    type: greenhouse
-    board: netflix
-    
-  # ---- Greenhouse Companies ----
-  - name: Atlassian
-    type: greenhouse
-    board: atlassian
-    
-  - name: Datadog
-    type: greenhouse
-    board: datadog
-    
-  - name: Cloudflare
-    type: greenhouse
-    board: cloudflare
-    
-  - name: Stripe
-    type: greenhouse
-    board: stripe
-    
-  - name: Coinbase
-    type: greenhouse
-    board: coinbase
-    
-  - name: Twilio
-    type: greenhouse
-    board: twilio
-    
-  - name: HubSpot
-    type: greenhouse
-    board: hubspot
-    
-  - name: Lyft
-    type: greenhouse
-    board: lyft
-    
-  - name: Dropbox
-    type: greenhouse
-    board: dropbox
-    
-  - name: Shopify
-    type: greenhouse
-    board: shopify
-    
-  - name: Figma
-    type: greenhouse
-    board: figma
-    
-  - name: GitLab
-    type: greenhouse
-    board: gitlab
-    
-  - name: GitHub
-    type: greenhouse
-    board: github
-    
-  - name: Okta
-    type: greenhouse
-    board: okta
-    
-  - name: Notion
-    type: greenhouse
-    board: notion
-    
-  - name: Asana
-    type: greenhouse
-    board: asana
-    
-  - name: Benchling
-    type: greenhouse
-    board: benchling
-    
-  - name: Databricks
-    type: greenhouse
-    board: databricks
-    
-  - name: DoorDash
-    type: greenhouse
-    board: doordash
-    
-  - name: Instacart
-    type: greenhouse
-    board: instacart
-    
-  - name: Snowflake
-    type: greenhouse
-    board: snowflake
-    
-  - name: Rippling
-    type: greenhouse
-    board: rippling
-    
-  - name: Scale AI
-    type: greenhouse
-    board: scaleai
-    
-  - name: Airtable
-    type: greenhouse
-    board: airtable
-    
-  - name: Brex
-    type: greenhouse
-    board: brex
-    
-  - name: Canva
-    type: greenhouse
-    board: canva
-    
-  - name: Confluent
-    type: greenhouse
-    board: confluent
-    
-  - name: Samsara
-    type: greenhouse
-    board: samsara
-    
-  - name: Snyk
-    type: greenhouse
-    board: snyk
-    
-  - name: DigitalOcean
-    type: greenhouse
-    board: digitalocean
-    
-  - name: Fastly
-    type: greenhouse
-    board: fastly
-    
-  - name: Zapier
-    type: greenhouse
-    board: zapier
-    
-  - name: Postman
-    type: greenhouse
-    board: postman
-    
-  - name: New Relic
-    type: greenhouse
-    board: newrelic
-    
-  - name: Dataminr
-    type: greenhouse
-    board: dataminr
-    
-  - name: PagerDuty
-    type: greenhouse
-    board: pagerduty
-    
-  - name: Squarespace
-    type: greenhouse
-    board: squarespace
-    
-  - name: Elastic
-    type: greenhouse
-    board: elastic
-    
-  - name: HashiCorp
-    type: greenhouse
-    board: hashicorp
-    
-  - name: Segment
-    type: greenhouse
-    board: segment
-    
-  - name: Robinhood
-    type: greenhouse
-    board: robinhood
-    
-  - name: Reddit
-    type: greenhouse
-    board: reddit
-    
-  - name: CrowdStrike
-    type: greenhouse
-    board: crowdstrike
-    
-  - name: MongoDB
-    type: greenhouse
-    board: mongodb
-    
-  - name: Loom
-    type: greenhouse
-    board: loom
-    
-  - name: Calendly
-    type: greenhouse
-    board: calendly
-    
-  - name: Grammarly
-    type: greenhouse
-    board: grammarly
-    
-  - name: Duolingo
-    type: greenhouse
-    board: duolingo
-    
-  - name: Patreon
-    type: greenhouse
-    board: patreon
-    
-  - name: Miro
-    type: greenhouse
-    board: miro
-    
-  - name: Glean
-    type: greenhouse
-    board: glean
-    
-  - name: OpenAI
-    type: greenhouse
-    board: openai
-    
-  - name: Anthropic
-    type: greenhouse
-    board: anthropic
-    
-  # Additional high-growth companies
-  - name: Discord
-    type: greenhouse
-    board: discord
-    
-  - name: Ramp
-    type: greenhouse
-    board: ramp
-    
-  - name: Linear
-    type: greenhouse
-    board: linear
-    
-  - name: Vercel
-    type: greenhouse
-    board: vercel
-    
-  - name: Supabase
-    type: greenhouse
-    board: supabase
+  # Use autodetect with careers URLs (no brittle slugs; no 404s)
 
-  # ---- Lever Companies ----
-  - name: Palantir
-    type: lever
-    board: palantir
-    
-  - name: Opendoor
-    type: lever
-    board: opendoor
-    
-  - name: Cerebras
-    type: lever
-    board: cerebras
-    
-  - name: Faire
-    type: lever
-    board: faire
-    
-  - name: BenchSci
-    type: lever
-    board: benchsci
-    
-  - name: Anduril
-    type: lever
-    board: anduril
-    
-  - name: Retool
-    type: lever
-    board: retool
+  # Major tech
+  - { name: Meta,        type: autodetect, url: "https://www.metacareers.com/jobs" }
+  - { name: Netflix,     type: autodetect, url: "https://jobs.netflix.com/" }
+  - { name: Google,      type: autodetect, url: "https://careers.google.com/jobs/results/" }
+  - { name: Apple,       type: autodetect, url: "https://jobs.apple.com/en-us/search" }
+  - { name: Microsoft,   type: autodetect, url: "https://jobs.microsoft.com/" }
+  - { name: Amazon,      type: autodetect, url: "https://www.amazon.jobs/en/" }
 
-  # ---- Workday Companies (Active URLs) ----
-  - name: NVIDIA
-    type: workday_json
-    url: "https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/jobs"
-    
-  - name: Salesforce
-    type: workday_json
-    url: "https://salesforce.wd1.myworkdayjobs.com/wday/cxs/salesforce/External_Career_Site/jobs"
-    
-  - name: Adobe
-    type: workday_json
-    url: "https://adobe.wd5.myworkdayjobs.com/wday/cxs/adobe/external/jobs"
-    
-  - name: Workday
-    type: workday_json
-    url: "https://workday.wd5.myworkdayjobs.com/wday/cxs/workday/Workday/jobs"
-    
-  - name: ServiceNow
-    type: workday_json
-    url: "https://servicenow.wd5.myworkdayjobs.com/wday/cxs/servicenow/Corporate/jobs"
-    
-  - name: Intuit
-    type: workday_json
-    url: "https://intuit.wd1.myworkdayjobs.com/wday/cxs/intuit/External/jobs"
-    
-  - name: VMware
-    type: workday_json
-    url: "https://vmware.wd1.myworkdayjobs.com/wday/cxs/vmware/vmware-careers/jobs"
+  # Strong 1–3 YOE hiring, mixed ATS
+  - { name: Atlassian,   type: autodetect, url: "https://www.atlassian.com/company/careers/all-jobs" }
+  - { name: Datadog,     type: autodetect, url: "https://www.datadoghq.com/careers/" }
+  - { name: Cloudflare,  type: autodetect, url: "https://www.cloudflare.com/careers/jobs/" }
+  - { name: Stripe,      type: autodetect, url: "https://stripe.com/jobs/search" }
+  - { name: Coinbase,    type: autodetect, url: "https://www.coinbase.com/careers/positions" }
+  - { name: Twilio,      type: autodetect, url: "https://www.twilio.com/company/jobs" }
+  - { name: HubSpot,     type: autodetect, url: "https://www.hubspot.com/careers/jobs" }
+  - { name: Lyft,        type: autodetect, url: "https://www.lyft.com/careers" }
+  - { name: Dropbox,     type: autodetect, url: "https://www.dropbox.com/jobs" }
+  - { name: Shopify,     type: autodetect, url: "https://www.shopify.com/careers/search" }
+  - { name: Figma,       type: autodetect, url: "https://www.figma.com/careers/" }
+  - { name: GitLab,      type: autodetect, url: "https://about.gitlab.com/jobs/" }
+  - { name: GitHub,      type: autodetect, url: "https://github.careers/" }
+  - { name: Okta,        type: autodetect, url: "https://www.okta.com/company/careers/" }
+  - { name: Notion,      type: autodetect, url: "https://www.notion.so/careers" }
+  - { name: Asana,       type: autodetect, url: "https://www.asana.com/jobs" }
+  - { name: Benchling,   type: autodetect, url: "https://www.benchling.com/careers" }
+  - { name: Databricks,  type: autodetect, url: "https://www.databricks.com/company/careers/open-positions" }
+  - { name: DoorDash,    type: autodetect, url: "https://careers.doordash.com/" }
+  - { name: Instacart,   type: autodetect, url: "https://instacart.careers/" }
+  - { name: Snowflake,   type: autodetect, url: "https://careers.snowflake.com/" }
+  - { name: Rippling,    type: autodetect, url: "https://www.rippling.com/careers/jobs" }
+  - { name: Scale AI,    type: autodetect, url: "https://scale.com/careers" }
+  - { name: Airtable,    type: autodetect, url: "https://www.airtable.com/careers" }
+  - { name: Brex,        type: autodetect, url: "https://www.brex.com/careers" }
+  - { name: Canva,       type: autodetect, url: "https://www.canva.com/careers/jobs/" }
+  - { name: Confluent,   type: autodetect, url: "https://www.confluent.io/careers/open-roles/" }
+  - { name: Samsara,     type: autodetect, url: "https://www.samsara.com/company/careers/open-roles/" }
+  - { name: Snyk,        type: autodetect, url: "https://snyk.io/careers/jobs/" }
+  - { name: DigitalOcean,type: autodetect, url: "https://www.digitalocean.com/careers" }
+  - { name: Fastly,      type: autodetect, url: "https://www.fastly.com/careers/jobs" }
+  - { name: Zapier,      type: autodetect, url: "https://zapier.com/jobs" }
+  - { name: Postman,     type: autodetect, url: "https://www.postman.com/company/careers/jobs/" }
+  - { name: New Relic,   type: autodetect, url: "https://newrelic.com/about/careers" }
+  - { name: Dataminr,    type: autodetect, url: "https://www.dataminr.com/careers" }
+  - { name: PagerDuty,   type: autodetect, url: "https://www.pagerduty.com/careers/jobs/" }
+  - { name: Squarespace, type: autodetect, url: "https://www.squarespace.com/careers" }
+  - { name: Elastic,     type: autodetect, url: "https://www.elastic.co/about/careers" }
+  - { name: HashiCorp,   type: autodetect, url: "https://www.hashicorp.com/careers" }
+  - { name: Robinhood,   type: autodetect, url: "https://careers.robinhood.com/openings/" }
+  - { name: Reddit,      type: autodetect, url: "https://www.redditinc.com/careers/" }
+  - { name: CrowdStrike, type: autodetect, url: "https://www.crowdstrike.com/careers/" }
+  - { name: MongoDB,     type: autodetect, url: "https://www.mongodb.com/careers" }
+  - { name: Loom,        type: autodetect, url: "https://www.loom.com/careers" }
+  - { name: Calendly,    type: autodetect, url: "https://careers.calendly.com/" }
+  - { name: Grammarly,   type: autodetect, url: "https://www.grammarly.com/jobs" }
+  - { name: Duolingo,    type: autodetect, url: "https://careers.duolingo.com/" }
+  - { name: Patreon,     type: autodetect, url: "https://www.patreon.com/careers" }
+  - { name: Miro,        type: autodetect, url: "https://miro.com/careers/positions/" }
+  - { name: Glean,       type: autodetect, url: "https://www.glean.com/careers" }
+  - { name: OpenAI,      type: autodetect, url: "https://openai.com/careers" }
+  - { name: Anthropic,   type: autodetect, url: "https://www.anthropic.com/careers" }
+  - { name: Discord,     type: autodetect, url: "https://discord.com/careers" }
+  - { name: Ramp,        type: autodetect, url: "https://www.ramp.com/careers" }
+  - { name: Linear,      type: autodetect, url: "https://linear.app/jobs" }
+  - { name: Vercel,      type: autodetect, url: "https://vercel.com/careers" }
+  - { name: Supabase,    type: autodetect, url: "https://supabase.com/careers" }
+  - { name: Plaid,       type: autodetect, url: "https://plaid.com/careers/openings/" }
+  - { name: Hugging Face,type: autodetect, url: "https://huggingface.co/careers" }
 
-  # ---- Company-specific customizations ----
-  # Example: AI-focused company with specific requirements
-  - name: Hugging Face
-    type: greenhouse
-    board: huggingface
-    include_keywords:
-      - "Machine Learning"
-      - "AI"
-      - "NLP"
-      - "Deep Learning"
-      - "Research"
-      - "Applied Scientist"
-    locations_any:
-      - "Remote"
-      - "New York"
-      - "Paris"
-      
-  # Example: Fintech company
-  - name: Plaid
-    type: greenhouse
-    board: plaid
-    include_keywords:
-      - "Software Engineer"
-      - "Backend Engineer"
-      - "Frontend Engineer"
-      - "Full Stack"
-      - "Platform Engineer"
-      - "Infrastructure Engineer"
-    exclude_keywords:
-      - "VP"
-      - "Director"
-      - "Manager"
-      - "Principal Staff"
-    locations_any:
-      - "Remote"
-      - "San Francisco"
-      - "New York"
-      - "Salt Lake City"
+  # Lever-heavy (use direct Lever URL for clean autodetect)
+  - { name: Palantir,    type: autodetect, url: "https://jobs.lever.co/palantir" }
+  - { name: Opendoor,    type: autodetect, url: "https://jobs.lever.co/opendoor" }
+  - { name: Cerebras,    type: autodetect, url: "https://jobs.lever.co/cerebras" }
+  - { name: Faire,       type: autodetect, url: "https://jobs.lever.co/faire" }
+  - { name: BenchSci,    type: autodetect, url: "https://jobs.lever.co/benchsci" }
+  - { name: Anduril,     type: autodetect, url: "https://jobs.lever.co/anduril" }
+  - { name: Retool,      type: autodetect, url: "https://jobs.lever.co/retool" }
+
+  # Workday sites — use public listing pages (auto-routed to Workday HTML parser)
+  - { name: NVIDIA,      type: autodetect, url: "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite" }
+  - { name: Salesforce,  type: autodetect, url: "https://salesforce.wd1.myworkdayjobs.com/External_Career_Site" }
+  - { name: Adobe,       type: autodetect, url: "https://adobe.wd5.myworkdayjobs.com/external" }
+  - { name: Workday,     type: autodetect, url: "https://workday.wd5.myworkdayjobs.com/Workday" }
+  - { name: ServiceNow,  type: autodetect, url: "https://servicenow.wd5.myworkdayjobs.com/servicenow" }
+  - { name: Intuit,      type: autodetect, url: "https://intuit.wd1.myworkdayjobs.com/External" }
+  - { name: VMware,      type: autodetect, url: "https://vmware.wd1.myworkdayjobs.com/vmware" }
